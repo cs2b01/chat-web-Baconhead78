@@ -1,6 +1,5 @@
-$function(){
-    var url = "http://127.0.0.1:8080/users";
-
+$(function(){
+    var url = "http://127.0.0.1:8080/messages";
 
     $("#grid").dxDataGrid({
         dataSource: DevExpress.data.AspNet.createStore({
@@ -34,13 +33,17 @@ $function(){
             dataType: "number",
             allowEditing: false
         }, {
-            dataField: "username"
+            dataField: "user_from_id"
         }, {
-            dataField: "name"
+            dataField: "user_to_id"
         }, {
-            dataField: "fullname"
+            dataField: "user_from"
         }, {
-            dataField: "password"
+            dataField: "user_to"
+				}, {
+						dataField: "content"
+				}, {
+						dataField: "sent_on"
         }, ],
     }).dxDataGrid("instance");
 });
